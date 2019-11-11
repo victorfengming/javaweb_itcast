@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<xsd:schema xmlns="http://www.itcast.cn/xml"
+        xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.itcast.cn/xml"  elementFormDefault="qualified"> 指定目标名称空间名称
+    <xsd:element name="students" type="studentsType"/> 定义students元素，类型为studentsType类型
+    <xsd:complexType name="studentsType"> 定义studentsType类型
+        <xsd:sequence>
+            <xsd:element name="student" type="studentType" minOccurs="0" maxOccurs="unbounded"/> studentsType类型包含0~N个student元素
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="studentType"> 定义studentType类型
+        <xsd:sequence> 子元素必须按顺序出现
+            <xsd:element name="name" type="xsd:string"/> studentType类型顺序包含子元素name，类型为字符串
+            <xsd:element name="age" type="ageType" /> studentType类型顺序包含子元素age，类型为ageType
+            <xsd:element name="sex" type="sexType" /> studentType类型顺序包含子元素sex，类型为sexType
+        </xsd:sequence>
+        <xsd:attribute name="number" type="numberType" use="required"/> studentType类型包含属性number，类型为numberType，该属性是必须的
+    </xsd:complexType>
+    <xsd:simpleType name="sexType"> 定义类型sexType
+        <xsd:restriction base="xsd:string"> 该类型是对string进行约束
+            <xsd:enumeration value="male"/> 指定枚举选项
+            <xsd:enumeration value="female"/> 指定枚举选项
+        </xsd:restriction>
+    </xsd:simpleType>
+    <xsd:simpleType name="ageType"> 定义ageType类型
+        <xsd:restriction base="xsd:integer"> 该类型对integer进行约束
+            <xsd:minInclusive value="0"/>
+            <xsd:maxInclusive value="120"/> 范围为0~120
+        </xsd:restriction>
+    </xsd:simpleType>
+    <xsd:simpleType name="numberType"> 定义numberType类型
+        <xsd:restriction base="xsd:string"> 对string类型进行约束
+            <xsd:pattern value="ITCAST_\d{4}"/> 指定正则表达式
+        </xsd:restriction>
+    </xsd:simpleType>
+</xsd:schema>

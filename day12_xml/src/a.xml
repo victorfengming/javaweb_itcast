@@ -1,4 +1,6 @@
-<?xml version="1.0" encoding="utf-8" ?>
+<?xml version="1.0" encoding="utf-8" standalone='yes'?>
+<?xml-stylesheet type="text/css" href="a.css"?>
+
 <users>
 
     <user id='1'>
@@ -12,5 +14,12 @@
         <age>21</age>
         <gender>female</gender>
     </user>
+
+
+    <code>
+        <![CDATA[
+            if (a<b){}
+        ]]>
+    </code>
 
 </users>

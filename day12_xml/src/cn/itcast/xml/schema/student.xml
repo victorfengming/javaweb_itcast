@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+ <schema_student:students xmlns:schema_student="http://www.itcast.cn/xml"
+                          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.itcast.cn/xml students.xsd">指定默认名称空间,指定Schema约束文件
+    <schema_student:student number="ITCAST_1001"> 子元素student，其中number属性是必须的，而且number属性值必须匹配正则表达式ITCAST_\d{4}
+        <schema_student:name>zhangSan</schema_student:name> 子元素name，内容为任意字符串
+        <schema_student:age>20</schema_student:age> 子元素age，内容必须是0~100之间的整数
+        <schema_student:sex>male</schema_student:sex> 子元素sex，内容必须是male和female其中之一。
+    </schema_student:student>
+    <schema_student:student number="ITCAST_1002">
+        <schema_student:name>liSi</schema_student:name>
+        <schema_student:age>25</schema_student:age>
+        <schema_student:sex>female</schema_student:sex>
+    </schema_student:student>
+</schema_student:students>
