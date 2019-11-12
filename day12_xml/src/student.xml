@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8" standalone='yes'?>
 <students>
     <student number="heima_001">
-        <name>tom</name>
+        <name id="itcast">tom</name>
         <age>18</age>
         <sex>male</sex>
     </student>
